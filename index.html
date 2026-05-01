@@ -11,30 +11,31 @@
         }
         table{
             width: 50%;
-            border: 1px solid black;
-            border-collapse: collapse;
         }
         footer{
             text-align: center;
+        }
+        li{
+            margin-bottom: 3px;
         }
     </style>
 </head>
 <body>
     <main>
         <header>
-            <h1>Futebol Brasileiro - Hanking de títulos</h1>
+            <h1>Futebol Brasileiro - Ranking de títulos</h1>
             <p>Os maiores campeonatos nacionais do Brasil</p>
         </header>
         <nav>
             <ul type="disc">
-                <li><a href="#titulos"><u>Ranking de titulos</u></a><br></li>
+                <li><a href="#titulos"><u>Ranking de titulos</u></a></li>
                 <li><a href="#cadastrar"><u>Cadastrar jogador</u></a></li>
             </ul>
         </nav>
         <hr>
         <section id="titulos">
             <h2>Classificação de titulos nacionais</h2>
-                <table>
+                <table cellpadding="10" cellspacing="0" border="1">
                     <thead>
                         <tr>
                             <th>Posição</th>
@@ -58,9 +59,9 @@
                                 <td>2º</td>
                                 <td><img src="/img/time2.png" alt="Flamengo"></td>
                                 <td>Flamengo</td>
-                                <td>8*</td>
+                                <td>9</td>
                                 <td>5</td>
-                                <td>13</td>
+                                <td>14</td>
                             </tr>
                             <tr>
                                 <td>3º</td>
@@ -138,9 +139,9 @@
         <section id="cadastrar">
             <h3>Cadastrar jogador</h3>
             <p>Preencha todos os campos abaixo para cadastrar um jogador</p>
+            <form action="#" method="post">
         <fieldset>
                 <legend>Dados pessoais</legend><br>
-            <form action="" method="get">
                 <div>
                     <label for="id_nome">Nome:</label>
                     <input type="text" id="id_nome" name="nome" required>
@@ -154,8 +155,7 @@
                     <input type="password" id="id_senha" name="senha" required>
                 </div><br>
                 <div>
-                    <legend>Data de nascimento:</legend>
-                    <label for="id_nascimento"></label>
+                    <label for="id_nascimento">Data de nascimento:</label>
                     <input type="date" id="id_nascimento" name="DataNascimento" required>
                 </div><br>
                 <div>
@@ -184,12 +184,9 @@
                     <label for="id_cor">Cor favorita</label>
                     <input type="color" name="corFavorita" id="id_cor">
                 </div><br>
-            </form>
-        </section>
-        </fieldset>
+            </fieldset>
         <fieldset>
             <legend>Dados Profissionais</legend><br>
-        <section id="Dados profissinais">
             <div>
                 <label for="id_clube">Selecione o clube</label>
                 <select name="clube" id="id_clube" required>
@@ -218,7 +215,7 @@
             </div><br>
             <div>
                 <label for="id_numeroCamisa">Nº da camisa</label>
-                <input type="number" name="NumeroDaCamisa" id="id_numeroCamisa">
+                <input type="number" name="NumeroDaCamisa" id="id_numeroCamisa" min="1">
             </div><br>
             <div>
 
@@ -232,7 +229,7 @@
             </div><br>
             <div>
                 <label for="id_ultimaPartida">Data e hora da ultima partida:</label>
-                <input type="datetime-local" name=""UltimaPartida id="id_ultimaPartida">
+                <input type="datetime-local" name="UltimaPartida" id="id_ultimaPartida">
             </div><br>
             <div>
                 <label for="id_dataContratacao">Mês/Ano de contratação:</label>
@@ -242,11 +239,11 @@
                 <label for="id_semanaFolga">Semana de folga:</label>
                 <input type="week" name="SemanaFolga" id="id_semanaFolga">
             </div>
+            </fieldset>
         </section>
-        </fieldset>
-        <fieldset>
+        <section>
+            <fieldset>
             <legend>Características</legend><br>
-            <section>
                 <strong>Pé dominante:</strong>                
                 <div>
                     <label for="id_destro">Destro</label>
@@ -260,15 +257,13 @@
                     <label for="id_Ambidestro">Ambidestro</label>
                     <input type="radio" name="peDominante" id="id_Ambidestro">
                 </div><br>           
-            </section>
-            <section>
-                <strong>Habilidades especiais</strong><br>
+                <strong>Habilidades especiais:</strong><br>
                 <div>
                     <label for="id_cobrador">Cobrador de faltas</label>
                     <input type="checkbox" name="cFaltas" id="id_cobrador">
                 </div>
                 <div>
-                    <label for="id_penaltis">Cobrados de pênaltis</label>
+                    <label for="id_penaltis">Cobrador de pênaltis</label>
                     <input type="checkbox" name="cPenaltis" id="id_penaltis">
                 </div>
                 <div>
@@ -280,8 +275,8 @@
                     <input type="checkbox" name="cSelecao" id="id_cSelecao">
                 </div><br>
                 <div>
-                    <label for="id_biografia">Biogafia do jogador:</label><br>
-                    <textarea name="biografia" id="id_biografia" placeholder="Escreva uma breve biografia do jogador..."></textarea>
+                    <label for="id_biografia">Biografia do jogador:</label><br>
+                    <textarea name="biografia" id="id_biografia" placeholder="Escreva uma breve biografia do jogador..." rows="4" cols="40"></textarea>
                 </div><br>
                 <div>
                     <label for="id_foto">Upload de foto do jogador:</label><br>
@@ -291,12 +286,13 @@
                     <label for="id_estatisticas">Pesquisar estatísticas:</label>
                     <input type="search" name="pesquisarEstatisticas" id="id_estatisticas" placeholder="Digite para buscar...">
                 </div>
-            </section>
-        </fieldset>
+            </fieldset>
+        </section>
         <br>
         <button type="submit">Cadastrar jogador</button>
         <button type="reset">Limpar Formulário</button>
-        <button>Ajuda</button>
+        <button type="button">Ajuda</button>
+            </form>
         <hr>
         <footer>
             <strong>Ciência da Computação - IFBA</strong>
