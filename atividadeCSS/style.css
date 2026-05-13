@@ -1,0 +1,31 @@
+body{
+    margin: 0px; padding: 0px;
+    height: 90%;
+    background-color: antiquewhite;
+}
+main{
+    padding: 100px;
+
+}
+.card{
+    text-align: center;
+    padding: 5px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+header{
+    text-align: center;
+    background-color: #5e2a7e;
+    padding: 5px;
+    color: white;
+}
+
+footer{
+    margin-bottom: 0px;
+    padding: 5px;
+    text-align: center;
+    color: gray;
+    background-color: rgb(180, 180, 180);
+}
+
